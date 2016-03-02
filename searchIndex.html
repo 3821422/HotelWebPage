@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes"/>
+
+<!--[if lt IE 9]>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-datetimepicker.css">
+<link rel="stylesheet" href="css/main.css">
+
+<style>
+    @media all and (min-width: 767px) {
+        #requestFrom {
+            max-height: 10.8em;
+            background-color: rgba(250, 244, 255, 0.5);
+            text-align: center;
+            margin-top: 500px;
+            /*position: absolute;*/
+        }
+
+        #div_Special_Rates {
+            height: 4em;
+            width: 49%;
+            margin-left: 1%;
+            float: right;
+            z-index: 999;
+            position: relative;
+        }
+
+        #div_room_guest_select {
+            height: 4em;
+            width: 49%;
+            float: left;
+        }
+
+        #bg_img {
+            height: 700px;
+            width: 100%;
+            position: absolute
+        }
+
+        #checkBox_usePoint {
+            height: 4em;
+            width: 49%;
+            float: left;
+            background-color: #ffffff;
+            border: 1px #d2d2d2 solid;
+        }
+
+        #btn_fid {
+            height: 4em;
+            width: 49%;
+            margin-left: 1%;
+            background-color: #2196E3
+        }
+
+        #bg_img {
+            margin-top: 20px;
+            height: 600px;
+            z-index: -1;
+        }
+    }
+
+    @media all and (max-width: 767px) {
+        #requestFrom {
+            position: relative;
+            /*margin-left: 8.33333333%;*/
+            margin-top: 0px;
+            position: relative;
+
+            max-height: 10.8em;
+            background-color: rgba(250, 244, 255, 0.5);
+            text-align: center;
+            margin-top: 500px;
+            position: absolute;
+            width: 81.77777777%;
+
+        }
+
+        #div_input_findHotel {
+            /*padding-left: 0%;padding-right: 0px;*/
+            width: 100%;
+        }
+
+        #collapseTwo {
+            margin-top: -0.6em;
+            width: 100%;
+            padding-top: 3px;
+            padding-left: 3px;
+            padding-bottom: 3px;
+            background-color: #ffffff;
+            border: 1px #d2d2d2 solid;
+        }
+
+        #div_room_guest_select {
+            height: 4em;
+            width: 49%;
+            margin-right: 2%;
+            z-index: 999;
+            position: relative;
+            margin-top: 0em;
+            margin-bottom: 1.4em;
+            float: left;
+
+        }
+
+        #div_Special_Rates {
+            height: 4em;
+            width: 49%;
+            z-index: 999;
+            position: relative;
+            margin-top: 0em;
+            margin-bottom: 1.4em;
+            float: right;
+
+        }
+
+        #div_usePoint {
+            width: 100%;
+        }
+
+        #checkBox_usePoint {
+            height: 4em;
+            width: 49%;
+            float: left;
+            background-color: #ffffff;
+            border: 1px #d2d2d2 solid;
+        }
+
+        #btn_fid {
+            height: 4em;
+            width: 49%;
+            margin-left: 1%;
+            background-color: #2196E3
+        }
+
+        #div_input_dataPickUp {
+            /*display: none;*/
+        }
+    }
+
+    @media all and (max-width: 500px) {
+        #requestFrom {
+            position: relative;
+            /*margin-left: 8.33333333%;*/
+            margin-top: 0px;
+            position: relative;
+
+            max-height: 10.8em;
+            background-color: rgba(250, 244, 255, 0.5);
+            text-align: center;
+            margin-top: 500px;
+            position: absolute;
+            width: 81.77777777%;
+        }
+
+        #div_Special_Rates {
+            width: 100%;
+            margin-top: 1.2em;
+            margin-bottom: 1.2em;
+        }
+
+        #div_room_guest_select {
+            width: 100%;
+            margin-top: 1.2em;
+            margin-bottom: 1.2em;
+            z-index: 1000;
+        }
+
+        #searchBottom {
+            width: 100%;
+
+        }
+
+        #div_room_guest_select {
+            width: 100%;
+        }
+
+        #div_usePoint {
+            width: 100%;
+        }
+
+        #checkBox_usePoint {
+            height: 4em;
+            width: 100%;
+            float: left;
+            background-color: #ffffff;
+            border: 1px #d2d2d2 solid;
+        }
+
+        #btn_fid {
+            height: 4em;
+            width: 100%;
+            background-color: #2196E3
+        }
+
+        #div_input_dataPickUp {
+            width: 100%;
+        }
+
+        #div_input_findHotel {
+            /*padding-left: 0%;padding-right: 0px;*/
+            width: 100%;
+        }
+    }
+</style>
+
+</head>
+<html>
+<body style="width: auto;height: 100%">
+<div class="container-fluid">
+    <div class="row ">
+
+        <div id="bg_img" class="col-xs-12 col-md-12 col-sm-12 col-lg-12 indexBG">
+
+        </div>
+        <div id="requestFrom" class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-xs-offset-1">
+            <div class="row">
+                <!--searchFrom-->
+                <div id="div_input_findHotel" class="col-sm-6  col-md-6 col-lg-6  col-xs-10">
+                    <input class="textInputMargin input_hotel_style"
+                           onclick="index_requestFrom_ClickSearchListener('findHotel')" placeholder="Find a Hotel"
+                           type="text" name="checkInDate"/>
+                </div>
+                <div id="div_input_dataPickUp" class="col-sm-6  col-md-6 col-lg-6  col-xs-10">
+                    <div class="textInputMargin input_hotel_style"
+                         style="padding-left: -10px;background-color: #ffffff;border:1px #d2d2d2 solid;">
+                        <span id="span_dataPickUp_1" class="form_datetime"
+                              onclick="index_requestFrom_ClickSearchListener('span_dataPickUp_1')"
+                              style="width: 40%;display: inline-block;margin-left: -15px;margin-right: -15px;height: 3em;margin-top: 0.5em;text-align: left"><h5
+                                style="text-align: left;">Mon,Feb 29,2016</h5></span>
+                        <span style="width: 10%;display: inline-block;margin-left: 0px;margin-right: 0px;height: 3em;margin-top: 0.5em;text-align: left"><h5
+                                style="text-align: left;">-</h5></span>
+                        <span id="span_dataPickUp_2" class="form_datetime"
+                              onclick="index_requestFrom_ClickSearchListener('span_dataPickUp_2')"
+                              style="width: 40%;display: inline-block;margin-left: -15px;margin-right: -15px;height: 3em;margin-top: 0.5em;text-align: left;"><h5>
+                            Tue,Mar 1,2016</h5></span>
+                    </div>
+                </div>
+
+                <div id="searchBottom">
+                    <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12" style="padding-left: 6px;padding-right: 6px;">
+
+                        <!--<input class="textInputMargin" onclick="index_requestFrom_ClickSearchListener()" style="height: 4em;width: 49%;float: left"  value="Tue, Feb 16, 2016 - Wed, Feb 17, 2016" type="text"  name="checkInDate"/>-->
+                        <!--popup html-->
+                        <div id="div_room_guest_select" class="accordion">
+                            <div class="accordion-group">
+                                <div class="accordion-heading">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
+                                       href="#collapseOne">
+                                        <input id="input_rooms_guest" class="textInputMargin"
+                                               style="height: 4em;width: 100%;padding-left: 15px;color: #080808"
+                                               value="1 Room,1 Guest/Rm" type="text" name="checkInDate"/>
+                                    </a>
+                                </div>
+                                <div id="collapseOne" class="accordion-body collapse"
+                                     style="background-color: #ffffff;margin-top: -0.6em;z-index: 999;position: relative;border:1px #d2d2d2 solid;">
+                                    <div class="accordion-inner">
+                                        <!--button group-->
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12"
+                                                 style="margin-left: 3px;margin-right: 3px;margin-top: 3px;;margin-bottom: 0px;">
+                                                <H5 class="input-sm"
+                                                    style="text-align:left;margin-bottom: -10px;margin-top: -0px;font-size: 14px">
+                                                    Rooms</H5>
+
+                                                <div class="input-group input-sm">
+                                                    <input id="input_rooms" type="text" class="form-control" value="1"
+                                                           style="height: 3em;">
+                                                              <span class="input-group-btn">
+                                                                <button id="btn_rooms_minus" onclick="RoomsOnClick('-')"
+                                                                        class="btn btn-default"
+                                                                        style="height: 3em;width:3em;padding-right: 1em"
+                                                                        type="button"><strong>-</strong></button>
+                                                                <button id="btn_rooms_add" onclick="RoomsOnClick('+')"
+                                                                        class="btn btn-default"
+                                                                        style="height: 3em;width:3em;" type="button">
+                                                                    <strong>+</strong></button>
+                                                              </span>
+                                                </div>
+                                                <!-- /input-group -->
+                                            </div>
+                                            <!-- /.col-lg-6 -->
+                                            <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12"
+                                                 style="margin-left: 3px;margin-right: 3px;margin-top: 3px;;margin-bottom: 0px;">
+                                                <H5 class="input-sm"
+                                                    style="text-align:left;margin-bottom: -10px;margin-top: -0px;font-size: 14px;">
+                                                    Guests/room</H5>
+
+                                                <div class="input-group input-sm">
+                                                    <input id="input_guests" type="text" class="form-control" value="1"
+                                                           style="height: 3em;">
+                                                              <span class="input-group-btn">
+                                                                <button id="btn_guests_minus"
+                                                                        onclick="GuestOnClick('-')"
+                                                                        class="btn btn-default"
+                                                                        style="height: 3em;width:3em;padding-right: 1em"
+                                                                        type="button"><strong>-</strong></button>
+                                                                <button id="btn_guests_add" onclick="GuestOnClick('+')"
+                                                                        class="btn btn-default"
+                                                                        style="height: 3em;width:3em;" type="button">
+                                                                    <strong>+</strong></button>
+                                                              </span>
+                                                </div>
+                                                <!-- /input-group -->
+                                            </div>
+                                            <!-- /.col-lg-6 -->
+                                            <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12"
+                                                 style="margin-left: 3px;margin-right: 3px;margin-top: -15px;margin-bottom: 3px;">
+                                                <div class="input-group input-sm" style="width: 100%;">
+                                                    <!--<input type="text" class="form-control" value="1" style="height: 3em;width: 100%">-->
+                                                    <button id="btn_reset" onclick="resetOnClick()"
+                                                            class="form-control btn btn-default"
+                                                            style="width: 100%;height: 3em;" type="button">
+                                                        <strong>RESET</strong></button>
+                                                </div>
+                                                <!-- /input-group -->
+                                            </div>
+                                            <!-- /.col-lg-6 -->
+                                        </div>
+                                        <!-- /.row -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="div_Special_Rates" class="accordion">
+                            <div class="accordion-group">
+                                <div class="accordion-heading">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                                       href="#collapseTwo">
+                                        <input id="input_specialRate" class="textInputMargin"
+                                               style="height: 4em;width: 100%;padding-left: 15px;color: #080808"
+                                               value="None" type="text" name="checkInDate"/>
+                                    </a>
+                                </div>
+                                <div id="collapseTwo" class="accordion-body collapse">
+                                    <div class="accordion-inner">
+                                        <div style="width: 100%;text-align: left">
+                                            <button class="btn "
+                                                    style="height: 3em;margin-bottom: 3px;margin-left:8px;background-color: #ffffff;border-color:#737373"
+                                                    onclick="setSpecialRateSetValue('None')" type="button">None
+                                            </button>
+                                            <button class="btn "
+                                                    style="height: 3em;margin-bottom: 3px;margin-left:8px;background-color: #ffffff;border-color:#737373"
+                                                    onclick="setSpecialRateSetValue('AAA/CAA')" type="button">AAA/CAA
+                                            </button>
+                                            <button class="btn "
+                                                    style="height: 3em;margin-bottom: 3px;margin-left:8px;background-color: #ffffff;border-color:#737373"
+                                                    onclick="setSpecialRateSetValue('Senior Discount')" type="button">
+                                                Senior Discount
+                                            </button>
+                                            <button class="btn "
+                                                    style="height: 3em;margin-bottom: 3px;margin-left:8px;background-color: #ffffff;border-color:#737373"
+                                                    onclick="setSpecialRateSetValue('Govemment & Military')"
+                                                    type="button">Govemment & Military
+                                            </button>
+                                            <button class="btn "
+                                                    style="height: 3em;margin-bottom: 3px;margin-left:8px;background-color: #ffffff;border-color:#737373"
+                                                    onclick="setSpecialRateSetValue('Corporate/promo code')"
+                                                    type="button">Corporate/promo code
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="div_usePoint" class="col-sm-6 col-md-6 col-lg-6 col-xs-10"
+                         style="padding-left: 6px;padding-right: 6px;">
+                                        <span id="checkBox_usePoint" class="textInputMargin">
+                                          <input id="input_CheckBox_usePoint" type="checkbox"
+                                                 style="background-color:#777777;height: 3em;margin-top: 0.5em;float: left;margin-left: 15px;">
+                                          <span class="navbar-text"
+                                                style="font-size: 15px;display: block;">Use Points</span>
+                                        </span>
+                        <button id="btn_fid" onclick="startFindHotle()" type="submit" class="btn  textInputMargin">
+                            FIND
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-2.2.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/modernizr-1.7.js"></script>
+<script src="js/less.min.js"></script>
+<script src="js/searchIndex.js"></script>
+<script src="js/bootstrap-datetimepicker.js"></script>
+
+</body>
+
+</html>

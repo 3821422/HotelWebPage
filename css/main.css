@@ -1,0 +1,109 @@
+#rewardCheckBox {
+	border: solid 1px;
+}
+
+#findSubmitButton {
+    padding: 0 0 0 0;
+    width: 100%;
+}
+#clearButton, #datePickerButton, #roomTypeButton, #specialRatesButton
+{
+    border: none;
+}
+#datePickerButton, #roomTypeButton, #specialRatesButton, #clearButton {
+	margin: 1em 0 0 0;
+}
+.sortingBar {
+	background: #e0e0e0;
+    padding-bottom: 1em;
+    padding-top: 1em;
+	/*margin: 0 0 0 2em;*/
+}
+.none-paddingDiv {
+    margin-top:0px;
+    padding-top: 0px;
+    margin-bottom:0px;
+    padding-bottom: 0px;
+}
+#clearButton
+{
+    display: none;
+}
+#editButton, #closeEditButton, .sortBarContentRight {
+  float: left;
+}
+.sortBarContentLeft_group{
+
+}
+.hotelPrice, .prices {
+    margin: 0 0 0 0;
+}
+.editSearchSideBar{
+    margin-top: 5em;
+}
+#checkInInput, #checkOutInput {
+	margin: 1em 0 1em 0;
+}
+.checkbox{
+	left: 1.5em;
+}
+.searchResultContainer{
+    padding-top: 1em;
+}
+.li_room{
+    -moz-border-radius:50%;-webkit-border-radius: 50%;border-radius: 50%;width: 50px;height: 50px;background-color: #ffffff;text-align:center;margin-left: 10px;width: 45px;height: 45px;margin-right:10px;
+}
+.li-guests{
+    -moz-border-radius:50%;-webkit-border-radius: 50%;border-radius: 50%;width: 50px;height: 50px;background-color: #ffffff;text-align:center;margin-left: 10px;width: 45px;height: 45px;margin-right:10px;
+}
+.icon{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+.none-paddingFont {
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-bottom:0px;
+    padding-bottom: 0px;
+    line-height: 20px;
+}
+.displayInline{
+    display:inline-block;
+}
+.sortingBarPadding{
+    padding-top:5px;padding-bottom: 5px;
+}
+.indexBG {
+    background-image: url(../img/01_28_2016_EISAK.jpg);
+    background-size:cover;
+    width: 100%;
+}
+.textInputMargin{
+    margin-top: 0.7em;
+    margin-bottom:0.7em;
+
+}
+#div_input_findHotel{
+    padding-left: 6px;padding-right: 6px;
+
+}
+#div_input_dataPickUp{
+    padding-left: 6px;padding-right: 6px;
+}
+#collapseTwo{
+    margin-top: -0.6em;width: 204%;padding-top:3px;padding-left:3px;padding-bottom:3px;background-color: #ffffff;border:1px #d2d2d2 solid; margin-top: -0.6em;width: 204%;padding-top:3px;padding-left:3px;padding-bottom:3px;background-color: #ffffff;border:1px #d2d2d2 solid;
+}
+#searchBottom{
+    display: none;
+}
+#input_CheckBox_usePoint{
+    display: inline-block;
+    height: 2em;
+    width: 2em;
+    border-radius: 2px;
+    background: url(../img/01_28_2016_EISAK.jpg) no-repeat;
+}
+.input_hotel_style{
+    height: 4em;width: 100%;padding-left: 15px;
+}

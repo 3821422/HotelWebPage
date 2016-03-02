@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="css/jquery.raty.css">
+
+    <!-- Include the plugin's CSS and JS: -->
+    <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
+
+</head>
+
+<html>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="  col-xs-12 col-sm-12 col-md-9 col-lg-9">
+            <!--<div class="headingContent  col-xs-12 col-sm-12 col-md-12 col-lg-12">-->
+
+
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                <h4>We found ${?number} hotels in ${destination}</h4>
+                <h5>Your stay: ${StartDate} to ${EndDate}</h5>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2  visible-xs-block visible-md-block visible-sm-block">
+                <p><a id="editButton" onclick="slideSearchBar()" style="margin-top: 15px;margin-right: -15px;float: right;width: 6em" class="btn btn-sm btn-default"
+                      href="#" role="button"><strong>Edit</strong></a></p>
+            </div>
+            <!--style="margin-top: 0px;background-color: #0000ff;padding-left: 0;padding-right: 0"-->
+            <div class="sortingBar col-xs-12 col-sm-12 col-md-12 col-lg-12 sortingBarPadding">
+                <div class="row">
+                    <div class="  col-xs-4 col-sm-4 col-md-4 col-lg-6">
+
+                            <!--<span  class=""  >-->
+                                <!--<span>List</span>-->
+                                <!--<span style="margin-top: 0px">-->
+                                <!--<H3  class="glyphicon glyphicon-th-list"></H3>-->
+                                <!--</span>-->
+                            <!--</span>-->
+
+                        <div class="sortBarContentRight" style="margin-right: 1em;">
+                            <span >List</span>
+                            <div>
+                                <H3 style="margin-top: 2px;"  class="glyphicon glyphicon-th-list"></H3>
+                            </div>
+                        </div>
+                        <div class="sortBarContentRight" style="margin-right:1em">
+                            <span>Gallery</span>
+                            <div>
+                                <H3 style="margin-top: 2px;margin-left: 10px"  class="glyphicon glyphicon-th-large"></H3>
+                            </div>
+                        </div>
+                        <div  style="margin-right: 10px"class="sortBarContentRight" style="margin-right:1em">
+                            <span>Map</span>
+                            <div>
+                                <H3  style="margin-top: 2px"  class="glyphicon glyphicon-map-marker"></H3>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="sortBarContentRight_group col-xs-8 col-sm-6 col-md-6 col-lg-6">
+                        <div class="sortBarContentRight btn-group" style="float: right">
+                            <div class="sortBarContentRight">
+                                <span>Sort By</span>
+                                    <select style="border-radius: 0px;" class="form-control btn-xs  btn-default">
+                                        <option style="background-color: #ffffff">Distance</option>
+                                        <option style="background-color: #ffffff">City</option>
+                                        <option style="background-color: #ffffff">Price</option>
+                                        <option style="background-color: #ffffff">Brand</option>
+                                    </select>
+                            </div>
+                            <div class="sortBarContentRight">
+                                <span>Show</span>
+                                <select  style="border-radius: 0px;" class="form-control btn-xs  btn-default">
+                                    <option style="background-color: #ffffff">Available Hotels</option>
+                                    <option style="background-color: #ffffff">All Hotels</option>
+                                </select>
+                            </div>
+                            <div class="sortBarContentRight">
+                                <span>Change</span>
+                                <select style="border-radius: 0px;" class="form-control btn-xs  btn-default">
+                                    <option style="background-color: #ffffff">Currency</option>
+                                    <option style="background-color: #ffffff">USD</option>
+                                    <option style="background-color: #ffffff">AUD</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div id="hotelList" class="searchResult col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div id="container_template" class="searchResultContainer">
+
+                        <div class="row">
+                            <div col-xs-12 col-sm-12 col-md-12 col-lg-12>
+                                <div style="background-color:#8c8c8c;margin-bottom: 10px; height: 1px"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div id="result1" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="searchImages col-xs-4 col-sm-3 col-md-2 col-lg-2" style="margin-top: 0px;background-color: #0000ff;padding-left: 0;padding-right: 0">
+                                    <img  height="100%" width="100%" src="img/01.jpg">
+                                </div>
+                                <!--class="thumbnail"-->
+                                <div class="searchDetails col-xs-8 col-sm-6 col-md-6 col-lg-6" >
+
+                                    <span style="margin-bottom: 0px;color: #386aa0;font-weight:700" class="hotelTitle">Renaissance Hong Kong Harbour View Hotel</span>
+                                    <p style="margin-bottom: 0px"  class="hotelLocation">1 Harbour Road,Wanchai Hong Kong,China <strong>0.5 miles</strong> from Hong Kong</p>
+
+                                    <div class="hotelLevel" style="margin-left: -5px;" >
+                                        <img class="levelIcon" height="100%" width="100%" src="img/03.jpg"
+                                             style="width:20%; height: 20%;">
+                                        4.5/5
+                                    </div>
+                                    <div class="visible-lg-block visible-md-block "
+                                         style="margin-top: 5px">
+                                        <p style="display:''">Lucky cit conter hotele located step form Hong Kong.China
+                                            0.8 miles from Hong Kong</p>
+
+                                        <span class="displayInline">
+                                            <img class="icon" src="img/02.jpg"><a>Fitness center</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </span>
+
+                                        <span  class="displayInline">
+                                            <img class="icon" src="img/02.jpg"><a class="">Pool</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </span>
+
+                                        <span  class="displayInline">
+                                            <img class="icon" src="img/02.jpg" >  <a class="">Fitness center</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </span>
+                                    </div>
+
+                                    <div class="visible-sm-block ">  <P class="none-paddingFont">Amenities</P></div>
+                                </div>
+                                <!--lg md-->
+                                <div class="searchPricesAndViews col-md-2 col-lg-2 visible-lg-block visible-md-block  col-lg-offset-2 col-md-offset-2">
+                                    <img class="visible-lg-block visible-md-block visible-sm-block" height="62px"
+                                         width="77px" src="img/02.jpg">
+
+                                    <P class="none-paddingFont">From</P>
+
+                                    <H2 class="none-paddingFont">2000</H2>
+
+                                    <P class="none-paddingFont">HKD/night</P>
+
+                                    <p><a class="btn btn-primary btn-default" href="#" role="button">View Rates</a></p>
+                                </div>
+                                <!--xm-->
+                                <div class="col-xs-10 col-xs-offset-4 visible-xs-block">
+                                    <P>Amenities</P>
+
+                                    <P>From</P>
+
+                                    <P class="none-paddingFont"><strong class="none-paddingFont"
+                                                                        style="font-size: 25px;padding-right: 2px;padding-top: 2px">2000</strong>HKD/night
+                                        <a style="font-size: 10px;padding-right:2px; margin-bottom: 12px"
+                                           class="btn btn-primary btn-xs btn-default" href="#" role="button">View
+                                            Rates</a></P>
+                                </div>
+
+                                <!--sm-->
+                                <div class="searchPricesAndViews col-sm-2 visible-sm-block col-sm-offset-1">
+                                    <P class="none-paddingFont">From</P>
+                                    <H2 class="none-paddingFont">2000</H2>
+                                    <P class="none-paddingFont">HKD/night</P>
+                                    <p><a class="btn btn-primary btn-default" href="#" role="button">View Rates</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="searchBar" class="editSearchSideBar col-xs-3 col-sm-3 col-md-3 col-lg-3 visible-lg-block visible-md-block"
+             style="background-color: #F4F4F4;">
+            <div >
+                <div class="none-paddingDiv col-md-12 col-lg-12"><h4 style="margin-left: -15px"><strong>Edit Your Search</strong></h4></div>
+                <p>City/airport*<span>Near an address</span></p>
+            </div>
+            <!--<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">-->
+            <!--<button id="closeEditButton" onClick="hideEditSideBar()"><span-->
+            <!--class="glyphicon glyphicon-remove-circle"></span></button>-->
+            <!--</div>-->
+            <div class="editContent col-md-12 col-lg-12" style="margin-left: -15px">
+                <form action="searchResult.html" method="post">
+                       <div>
+                            <H5> Location</H5>
+                            <input style="margin-top: -5px;margin-bottom: 10px;  border-radius: 0;width: 110%" placeholder="Hong Kong,China" id="checkInInput_location" type="text" class="form-control" name="checkInDate"/>
+                            <H5> Check-in</H5>
+                            <input style="margin-top: -5px;margin-bottom: 10px; border-radius: 0; width: 110%" placeholder="Wed,Jan 20,2016" id="checkOutInput_Check-in" type="text" class="form-control" name="checkOutDate"/>
+                            <H5> Check-out <span style="float: right">1 night</span></H5>
+                           <input style="margin-top: -5px;  border-radius: 0; width: 110%" id="checkOutInput_Check-out" placeholder="Thu,jan 21,2016" type="text" class="form-control" name="checkOutDate"/>
+
+                             <H5><input type="checkbox"/>  My date is flexible</H5>
+                       </div>
+                    <H6>Rooms</H6>
+                    <ul class="nav nav-pills" style="list-style: none;margin-left: -15px;width:130%;">
+                        <li class="li_room" onclick="setUlLiStyle(this,'li_room')"><P href="#" style="text-align:center;padding-top: 12px">1</P></li>
+                        <li class="li_room" onclick="setUlLiStyle(this,'li_room')"><P href="#" style="text-align:center;padding-top: 12px">2</P></li>
+                        <li class="li_room" onclick="setUlLiStyle(this,'li_room')"><P href="#" style="text-align:center;padding-top: 12px">3</P></li>
+                        <li class="li_room" onclick="setUlLiStyle(this,'li_room')"><P href="#" style="text-align:center;padding-top: 12px">+4</P></li>
+                    </ul>
+                    <H6>Guests/room</H6>
+                    <ul class="nav nav-pills" style="list-style: none;margin-left: -15px;width:130%;">
+                        <li class="li-guests" onclick="setUlLiStyle(this,'li-guests')"><P href="#" style="text-align:center;padding-top: 12px">1</P></li>
+                        <li class="li-guests" onclick="setUlLiStyle(this,'li-guests')"><P href="#" style="text-align:center;padding-top: 12px">2</P></li>
+                        <li class="li-guests" onclick="setUlLiStyle(this,'li-guests')"><P href="#" style="text-align:center;padding-top: 12px">3</P></li>
+                        <li class="li-guests" onclick="setUlLiStyle(this,'li-guests')"><P href="#" style="text-align:center;padding-top: 12px">+4</P></li>
+                    </ul>
+                    <H6><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span> REWARDS NUMBER</H6>
+                    <input id="isUseRewardsPoint" class="checkbox-inline" type="checkbox"><H6
+                        class="checkbox-inline text-left"
+                        style="padding-top: 0px;margin-top: 6px; padding-left: 0px">Use
+                    Rewards points</H6>&nbsp;&nbsp;&nbsp;&nbsp;<H6 class="checkbox-inline text-left"
+                                                                   style="color:#204d74;padding-top: 0px;margin-top: 6px; padding-left: 0px">
+                    waht's this</H6>
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/jquery-2.2.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/modernizr-1.7.js"></script>
+<script src="js/less.min.js"></script>
+<script src="js/jquery.raty.js"></script>
+<script src="js/searchResult.js"></script>
+</body>
+</html>
